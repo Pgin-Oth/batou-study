@@ -9,7 +9,7 @@ class Tick(Component):
             'tick.sh',
             mode=0755,
             content="""\
-#!/bin/bash
+#!/usr/bin/env bash
 while true; do
   date
   sleep 1
