@@ -10,3 +10,5 @@ shared/bliss_checkout/*
 !shared/bliss_checkout/.gitkeep
 shared/roundcube_checkout/*
 !shared/roundcube_checkout/.gitkeep
+shared/test/*
+!shared/test/
