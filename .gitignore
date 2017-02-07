@@ -1,6 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .batou
-.idea/workspace.xml
+.idea
+.vagrant
+.batou-study.iml
 work
 shared/batou_checkout/*
 !shared/batou_checkout/.gitkeep
