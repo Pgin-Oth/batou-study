@@ -1,4 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
-!/.batou
-!/.idea/workspace.xml
-!/work
+.batou
+.idea/workspace.xml
+work
+shared/batou_checkout/*
+!shared/batou_checkout/.gitkeep
+shared/bliss_checkout/*
+!shared/bliss_checkout/.gitkeep
+shared/roundcube_checkout/*
+!shared/roundcube_checkout/.gitkeep
