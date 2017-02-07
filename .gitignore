@@ -12,3 +12,7 @@ shared/roundcube_checkout/*
 !shared/roundcube_checkout/.gitkeep
 shared/test/*
 !shared/test/.gitkeep
+shared/test2/*
+!shared/test2/.gitkeep
+shared/test3/*
+!shared/test3/.gitkeep
