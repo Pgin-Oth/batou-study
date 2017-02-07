@@ -4,15 +4,7 @@
 .vagrant
 .batou-study.iml
 work
-shared/batou_checkout/*
-!shared/batou_checkout/.gitkeep
 shared/bliss_checkout/*
 !shared/bliss_checkout/.gitkeep
 shared/roundcube_checkout/*
 !shared/roundcube_checkout/.gitkeep
-shared/test/*
-!shared/test/.gitkeep
-shared/test2/*
-!shared/test2/.gitkeep
-shared/test3/*
-!shared/test3/.gitkeep
