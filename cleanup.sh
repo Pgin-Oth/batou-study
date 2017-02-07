@@ -2,7 +2,7 @@
 cd /home/vagrant/deployment/work/batou/checkout/
 rm -rdf batou
 cd /home/vagrant/deployment/work/zope/checkout/
-rm -rdf zope
+rm -rdf bliss
 cd /home/vagrant/deployment/work/roundcube/checkout/
 rm -rdf roundcube
 cd /home/vagrant/deployment/work/test/checkout/
