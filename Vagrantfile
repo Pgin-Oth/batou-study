@@ -25,9 +25,12 @@ Vagrant.configure("2") do |config|
 
     config.vm.network "private_network", ip: "192.168.50.4"
     config.vm.hostname = "default"
-    File.open('Components.cfg'){ |f|
-        f.readlines.each do |component|
-            config.vm.synced_folder "shared/#{component.chomp}_checkout/", "/home/vagrant/deployment/work/#{component.chomp}/checkout", group: "vagrant", owner: "vagrant"
+    File.open('tmp_share_folder.cfg'){ |f|
+        f.readlines.each do |share_folder_cfg|
+            share_folder_info = share_folder_cfg.chomp.split(",")
+            local = share_folder_info[0]
+            guest = share_folder_info[1]
+            config.vm.synced_folder local, guest
         end
     }
     config.trigger.after :up do

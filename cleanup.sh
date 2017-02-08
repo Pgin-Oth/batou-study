@@ -1,6 +1,8 @@
+#!/usr/bin/env bash
 prj_path=`pwd`
-for line in $(cat Components.cfg)
+for line in $(cat tmp_share_folder.cfg)
 do
-    cd ${prj_path}/shared/${line}_checkout/
+    local=`echo ${line} | cut -d "," -f1`
+    cd ${prj_path}/${local}
     ls -A | grep -v .gitkeep | xargs rm -rdf
 done
