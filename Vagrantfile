@@ -35,7 +35,7 @@ Vagrant.configure("2") do |config|
         run_remote "bash /vagrant/prepare.sh"
     end
     config.trigger.after :destroy do
-        info "Delete files in shared folders."
+        info "Deleting files in shared folders."
         run "bash cleanup.sh"
     end
 end
