@@ -34,8 +34,8 @@ Vagrant.configure("2") do |config|
         info "Create venv in shared folder"
         run_remote "bash /vagrant/prepare.sh"
     end
-    config.trigger.before :destroy do
+    config.trigger.after :destroy do
         info "Delete files in shared folders."
-        run_remote "bash /vagrant/cleanup.sh"
+        run "bash cleanup.sh"
     end
 end
