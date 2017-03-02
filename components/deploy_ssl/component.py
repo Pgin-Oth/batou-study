@@ -22,8 +22,8 @@ class LetsEncrypt(Component):
         pass
 
     def configure(self):
-        # self.provide('letsencrypt', self)
-        self.nginxmail = self.require_one('nginxmail')
+        self.provide('letsencrypt', self)
+        # self.nginxmail = self.require_one('nginxmail')
         # Step 1 Get acme.sh
         # self += Clone('https://github.com/Neilpang/acme.sh.git',
         #               branch='master',
@@ -31,8 +31,21 @@ class LetsEncrypt(Component):
         # Step 2 Prepare Folder and Script
         self += Directory('.well-known/')
         self += Directory('.well-known/acme-challenge/')
-        self += File(self.script_name, mode=0755)
+        # self += File(self.script_name, mode=0755)
         # Step 3 CronJob {{component.workdir}}/ssl_renew.sh
         # self += CronJob('cd {} && ./{}'.format(self.workdir, self.script_name),
         #                 timing='0 0 * * 0',
         #                 logger='letsencrypt_ssl_renew')
+
+
+class CmbLetNginx(Component):
+
+    def last_updated(self):
+        pass
+
+    def configure(self):
+        # self.provide('letsencrypt', self)
+        self.letsencrypt = self.require_one('letsencrypt')
+        self.nginxmail = self.require_one('nginxmail')
+        self.letsencrypt.nginxmail = self.nginxmail
+        self.letsencrypt += File(self.letsencrypt.script_name, mode=0755)

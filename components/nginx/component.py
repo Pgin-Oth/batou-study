@@ -57,12 +57,12 @@ class NginxMail(Component):
     def configure(self):
         self.provide('nginxmail', self)
         #self.letsencrypt = self.require_one('letsencrypt')
-        self.nginx = Nginx(public_name=self.public_name,
-                      alias=self.alias,
-                      config_filename=self.config_filename,
-                      # letsencrypt=self.letsencrypt,
-                      use_tls=self.use_tls)
-        self += self.nginx
+        #self.nginx = Nginx(public_name=self.public_name,
+        #              alias=self.alias,
+        #              config_filename=self.config_filename,
+        #              # letsencrypt=self.letsencrypt,
+        #              use_tls=self.use_tls)
+        #self += self.nginx
 
 
 @platform('gocept.net', Nginx)
