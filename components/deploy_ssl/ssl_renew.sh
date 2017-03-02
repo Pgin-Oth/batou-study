@@ -24,4 +24,5 @@ then
     mv ${ssl_cer} ${ssl_cer_bak}
     cat ${ssl_cer_bak} ${ssl_chain} > ${ssl_crt}
     rm -f ${ssl_cer_bak}
+    {{component.nginxmail.nginx._get_platform().cmd_str}}
 fi

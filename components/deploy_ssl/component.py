@@ -47,5 +47,6 @@ class CmbLetNginx(Component):
         # self.provide('letsencrypt', self)
         self.letsencrypt = self.require_one('letsencrypt')
         self.nginxmail = self.require_one('nginxmail')
+        self.nginxmail.comb(self.letsencrypt)
         self.letsencrypt.nginxmail = self.nginxmail
         self.letsencrypt += File(self.letsencrypt.script_name, mode=0755)

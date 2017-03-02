@@ -50,19 +50,20 @@ class NginxMail(Component):
     public_name = 'mail.apis.de'
     config_filename = 'mail.apis.de.conf'
     alias = 'www.mail.apis.de'
-    letsencrypt = ''
     use_tls = Attribute('literal', False)
     nginx = ''
 
     def configure(self):
         self.provide('nginxmail', self)
         #self.letsencrypt = self.require_one('letsencrypt')
-        #self.nginx = Nginx(public_name=self.public_name,
-        #              alias=self.alias,
-        #              config_filename=self.config_filename,
-        #              # letsencrypt=self.letsencrypt,
-        #              use_tls=self.use_tls)
-        #self += self.nginx
+
+    def comb(self, letsencrypt):
+        self.nginx = Nginx(public_name=self.public_name,
+                           alias=self.alias,
+                           config_filename=self.config_filename,
+                           letsencrypt=letsencrypt,
+                           use_tls=self.use_tls)
+        self += self.nginx
 
 
 @platform('gocept.net', Nginx)
